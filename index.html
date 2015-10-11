@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TestPage</title>
+	<link rel="stylesheet" href="css/test.css">
+	<script>
+		window.onerror = function(msg, url, line){
+			if(onerror.num++ < onerror.max){
+				alert("ERROR: " + msg +"\n" + url + ":" + line);
+			}
+		}
+		onerror.max = 3;
+		onerror.num = 0;
+	</script>
+	<script src="js/test.js"></script>
+</head>
+<body>
+	<p>test page</p>
+	<div id="test" style="width:200px;"></div>
+	<button id="button01" onclick="shake('test', 5, 500)";>Shake</button>
+</body>
+</html>
